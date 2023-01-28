@@ -1,0 +1,51 @@
+<div class="w-1/2 mx-auto">
+    <div class="bg-green p-6">
+        <h1 class="text-center font-bold text-xl">FORMULARIO DE REGISTRO</h1>
+    </div>
+    <table class="w-full text-sm text-left text-gray-500">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+          <tr>
+            <th class="px-6 py-3">Nombre</th>
+            <th class="px-6 py-3">Apellido</th>
+            <th class="px-6 py-3">Carrera</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of datos; let i = index" class="bg-white border-b">
+            <td class="px-6 py-4">{{ item.nombre }}</td>
+            <td class="px-6 py-4">{{ item.apellidos }}</td>
+            <td class="px-6 py-4">{{ item.carrera }}</td>
+            <td class="px-6 py-4">
+                <button (click)="deleteItem(i)" class="bg-red-400 text-white rounded-lg px-3 py-1">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+    </table>
+
+     
+<div class="pt-6">
+    <h1 class="text-center font-bold text-xl">FORMULARIO DE REGISTRO</h1>
+    <form (ngSubmit)="addData()">
+        <label>
+        Nombre:
+        <input type="text" [(ngModel)]="newData.nombre" name="name" class="rounded-lg border border-gray-300 p-1 w-full">
+        </label>
+        <br>
+        <label>
+        Apellido:
+        <input type="text" [(ngModel)]="newData.apellidos" name="apellido" class="rounded-lg border border-gray-300 p-1 w-full">
+        </label>
+        <label>
+            Carrera:
+            <input type="text" [(ngModel)]="newData.carrera" name="carrerra" class="rounded-lg border border-gray-300 p-1 w-full">
+        </label>
+        <br>
+        <div class="pt-6">
+            <button type="submit" class="bg bg-green-400 px-3 py-1 rounded-lg text-white pt">Agregar</button>
+        </div>
+        
+    </form>
+</div>
+    
+
+</div>
